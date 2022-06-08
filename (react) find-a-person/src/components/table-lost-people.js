@@ -14,23 +14,22 @@ export default function TableLostPeople(){
 
   return(
     <div>
-      {
-
+        <h2> Personas Extraviadas</h2>
+        <div class='table-headers'>
+          <h5>CURP</h5>
+          <h5>Nombre(s)</h5>
+          <h5>Apellido(s)</h5>
+          <h5>Fecha de Nacimiento</h5>
+          <h5>Última vez vist@</h5>
+        </div>
+        {
         LostPerson.map((element)=>(
-          <div>
-            <h2> Personas Extraviadas</h2>
-            <div class='table-headers'>
-              <h2>CURP</h2>
-              <h2>Nombre(s)</h2>
-              <h2>Apellido(s)</h2>
-              <h2>Fecha de Nacimiento</h2>
-              <h2>Última vez vist@</h2>
-            </div>  
+          <div>  
             <div class='table-content'>
                 <p>{element.curp}</p>
                 <p>{element.first_name}</p>
                 <p>{element.last_name}</p>
-                <p>{element.birthdate}</p>
+                <p>{element.birth_date}</p>
                 <p>{element.last_seen}</p>
             </div>
           </div >

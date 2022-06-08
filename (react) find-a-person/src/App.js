@@ -3,6 +3,7 @@ import Tabs from "./components/Tabs";
 import LostPerson from "./components/lost-person";
 import FindedPeople from "./components/Finded-people"
 import TableLostPeople from './components/table-lost-people';
+import TableFoundPeople from './components/table-found-people';
 import './App.css';
 
 function App() {
@@ -17,8 +18,11 @@ function App() {
           <div label="Personas Encontradas">
             <FindedPeople />
           </div>
-          <div label="Tabla de Personas ">
+          <div label="Tabla de Personas Perdidas">
             <TableLostPeople />
+          </div>
+          <div label="Tabla de Personas Encontradas">
+            <TableFoundPeople />
           </div>
         </Tabs>
       </header>

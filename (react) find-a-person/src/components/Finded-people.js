@@ -6,10 +6,12 @@ export default class FindedPeople extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      curp : "",
-      first_name : "",
-      last_name : "",
-      birth_date : "",
+      person : {
+        curp : "",
+        first_name : "",
+        last_name : "",
+        birth_date : ""
+      },
       found_date : "",
       address : "",
       hospitalized : false,
@@ -25,11 +27,20 @@ export default class FindedPeople extends React.Component{
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-
-    this.setState({
-      ...this.state,
-      [name]: value
-    });
+    if(name in this.state.person){
+      this.setState({
+        ...this.state,
+        person : {
+          ...this.state.person,
+          [name]: value
+        }
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        [name]: value
+      });
+    }
   }
 
   handleSubmit(event) {
@@ -45,22 +56,22 @@ export default class FindedPeople extends React.Component{
           <h3> Ingresa los datos de la persona que se encontró</h3>
           <label>
             CURP
-            <input type="text" name="curp" value={this.state.curp} onChange={this.handleInputChange}/>
+            <input type="text" name="curp" value={this.state.person.curp} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Nombre(s)
-            <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleInputChange}/>
+            <input type="text" name="first_name" value={this.state.person.first_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Apellido(s)
-            <input type="text" name="last_name" value={this.state.last_name} onChange={this.handleInputChange}/>
+            <input type="text" name="last_name" value={this.state.person.last_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Fecha de Nacimiento
-            <input type="date" name="birh_date" value={this.state.birth_date} onChange={this.handleInputChange}/>
+            <input type="date" name="birh_date" value={this.state.person.birth_date} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>

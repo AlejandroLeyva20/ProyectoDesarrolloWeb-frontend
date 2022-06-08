@@ -5,7 +5,7 @@ export async function getAllLostPersons() {
     try{
         const response = await axios.get('http://localhost:9000/api/v1/persons/');
         console.log('response  ', response)
-        return response.data,persons;
+        return response.data.persons;
     }catch(error) {
         return [];
     }
