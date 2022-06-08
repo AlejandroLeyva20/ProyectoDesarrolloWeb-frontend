@@ -22,6 +22,7 @@ export default class LostPerson extends React.Component {
     const name = target.name;
 
     this.setState({
+      ...this.state,
       [name]: value
     });
   }

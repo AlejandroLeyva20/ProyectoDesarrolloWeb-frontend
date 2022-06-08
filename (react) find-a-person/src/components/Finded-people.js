@@ -22,10 +22,12 @@ export default class FindedPeople extends React.Component{
   
   handleInputChange(event) {
     const target = event.target;
-    const value = target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
+
     this.setState({
+      ...this.state,
       [name]: value
     });
   }
@@ -71,13 +73,11 @@ export default class FindedPeople extends React.Component{
             <input type="text" name="addressFound" value={this.state.addressFounded} onChange={this.handleInputChange}/>
           </label>
           <br />
-          <fieldset>
             <label>
               ¿Está hospitalizado?
-                <label><input type="radio" id="si" name="hospitalized" value={this.state.hospitalized} onChange={this.handleInputChange}/>Sí</label>
-                <label><input type="radio" id="no" name="hospitalized" value={this.state.hospitalized} onChange={this.handleInputChange}/>No</label>
+                <label><input type="checkbox" id="si" name="hospitalized" value={this.state.hospitalized} onChange={this.handleInputChange}/>Sí</label>
             </label>
-          </fieldset>
+          <br />
           <label>
             Condición
             <input type="text" name="condition" value={this.state.condition} onChange={this.handleInputChange}/>

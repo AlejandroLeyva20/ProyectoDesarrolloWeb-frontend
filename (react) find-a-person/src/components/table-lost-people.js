@@ -1,30 +1,35 @@
 import './../App.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {getAllLostPersons} from '../services/LostPersonService'
 
-function TableLostPeople() {
-  return (
+export default function TableLostPeople(){
+  const [LostPerson, setLostPerson] = useState([])
+
+  useEffect(()=>{
+    const data = getAllLostPersons();
+    console.log(data);
+    //setLostPerson(data);
+  },[])
+
+
+  return(
     <div>
-      <h2> Personas Extraviadas</h2>
-      <table className='TableLostPeople'>
-        <tr>
-          <th>Nombre</th>
-          <th>Apellidos</th>
-          <th>Fecha de Nacimeinto</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table>
-    </div >
-  );
+      {
+        LostPerson.map((element)=>(
+          <div>
+            <h2> Personas Extraviadas</h2>
+            <table className='TableLostPeople'>
+              <tr>
+                <th>{element.curp}</th>
+                <th>{element.first_name}</th>
+                <th>{element.last_name}</th>
+                <th>{element.birthdate}</th>
+                <th>{element.last_seen}</th>
+              </tr>
+            </table>
+          </div >
+      ))
+    }
+  </div>
+  )
 }
-
-
-export default TableLostPeople;
