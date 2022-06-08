@@ -13,6 +13,6 @@ export async function getAllLostPersons() {
 }
 
 export async function createLostPerson(data) {
-    const response = await axios.post('http://localhost:9000/api/v1/persons/', {LostPerson: data});
+    const response = await axios.post('http://localhost:9000/api/v1/persons/', data);
     return response.data;
 }

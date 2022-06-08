@@ -15,18 +15,17 @@ export default function TableLostPeople(){
   return(
     <div>
       {
+
         LostPerson.map((element)=>(
           <div>
             <h2> Personas Extraviadas</h2>
-            <table className='TableLostPeople'>
-              <tr>
-                <th>{element.curp}</th>
-                <th>{element.first_name}</th>
-                <th>{element.last_name}</th>
-                <th>{element.birthdate}</th>
-                <th>{element.last_seen}</th>
-              </tr>
-            </table>
+            <div class='Table-content'>
+                <p>{element.curp}</p>
+                <p>{element.first_name}</p>
+                <p>{element.last_name}</p>
+                <p>{element.birthdate}</p>
+                <p>{element.last_seen}</p>
+            </div>
           </div >
       ))
     }

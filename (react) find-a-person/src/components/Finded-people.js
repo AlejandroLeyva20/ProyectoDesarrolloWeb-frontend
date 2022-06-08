@@ -7,14 +7,14 @@ export default class FindedPeople extends React.Component{
     super(props);
     this.state = {
       curp : "",
-      name : "",
-      surname : "",
-      birthDate : "",
-      foundDate : "",
-      addressFound : "",
+      first_name : "",
+      last_name : "",
+      birth_Date : "",
+      found_date : "",
+      address : "",
       hospitalized : false,
       condition : "",
-      moreInfo : ""
+      more_info : ""
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

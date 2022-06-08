@@ -7,10 +7,11 @@ export default class LostPerson extends React.Component {
     super(props);
     this.state = {
       curp : "",
-      name : "",
-      surname : "",
-      birthDate : "",
-      lastSeen : ""
+      first_name : "",
+      last_name : "",
+      birth_date : "",
+      last_seen : "",
+      missing : true
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

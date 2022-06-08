@@ -64,3 +64,21 @@ fieldset {
   border : none;
   padding : 0;
 }
+
+.table-headers{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table-content{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
