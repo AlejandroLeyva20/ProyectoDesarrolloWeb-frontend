@@ -13,7 +13,7 @@ export default function TableLostPeople(){
 
 
   return(
-    <div>
+    <div class="container">
         <h2> Personas Extraviadas</h2>
         <div class='table-headers'>
           <h5>CURP</h5>

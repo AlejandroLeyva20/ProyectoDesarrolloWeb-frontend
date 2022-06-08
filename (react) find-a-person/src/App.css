@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-header {
@@ -12,9 +15,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
   text-align: center;
-
+  width: 100vw;
 }
 
+.tab-list{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
 
 [label].tab-list {
   border-bottom: 1px solid #ccc;
@@ -60,25 +68,20 @@ tr, th, td {
   height: 80px;
 }
 
-fieldset {
-  border : none;
-  padding : 0;
+.container{
+  padding: 2em;
+  box-shadow: 0 0 10px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .table-headers{
   display: flex;
-  justify-content: space-around;
-  border: 1px solid;
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
+  justify-content: space-between;
 }
 
 .table-content{
   display: flex;
-  justify-content: space-around;
-  border: 1px solid;
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
+  justify-content: space-between;
 }

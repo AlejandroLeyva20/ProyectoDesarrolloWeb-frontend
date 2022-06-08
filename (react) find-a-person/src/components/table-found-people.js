@@ -13,22 +13,22 @@ export default function TableFoundPeople(){
 
 
   return(
-    <div>
-      {
-        LostPerson.map((element)=>(
-          <div>
-            <h2> Personas Encontradas</h2>
+    <div class="container">
+        <h2> Personas Encontradas</h2>
             <div class='table-headers'>
-              <h8>CURP</h8>
-              <h8>Nombre(s)</h8>
-              <h8>Apellido(s)</h8>
-              <h8>Fecha de Nacimiento</h8>
-              <h8>Fecha en que se encontró</h8>
-              <h8>Lugar</h8>
-              <h8>¿Está hospitalizad@?</h8>
-              <h8>Condición</h8>
-              <h8>Más información</h8>
+              <h6>CURP</h6>
+              <h6>Nombre(s)</h6>
+              <h6>Apellido(s)</h6>
+              <h6>Fecha de Nacimiento</h6>
+              <h6>Fecha en que se encontró</h6>
+              <h6>Lugar</h6>
+              <h6>¿Está hospitalizad@?</h6>
+              <h6>Condición</h6>
+              <h6>Más información</h6>
             </div>  
+      {
+        FoundPerson.map((element)=>(
+          <div>
             <div class='table-content'>
                 <p>{element.person.curp}</p>
                 <p>{element.person.first_name}</p>

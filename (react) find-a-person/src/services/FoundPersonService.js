@@ -5,7 +5,7 @@ export async function getAllFoundPersons() {
     try{
         const response = await axios.get('http://localhost:9000/api/v1/founds/');
         console.log('response  ', response)
-        return response.data.persons;
+        return response.data.founds;
     }catch(error) {
         return [];
     }
