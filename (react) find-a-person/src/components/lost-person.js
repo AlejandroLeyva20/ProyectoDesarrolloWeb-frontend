@@ -46,24 +46,24 @@ export default class LostPerson extends React.Component {
           <br />
           <label>
             Nombre(s)
-            <input type="text" name="name" value={this.state.name} onChange={this.handleInputChange}/>
+            <input type="text" name="name" value={this.state.first_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Apellido(s)
-            <input type="text" name="surname" value={this.state.surname} onChange={this.handleInputChange}/>
+            <input type="text" name="surname" value={this.state.last_name} onChange={this.handleInputChange}/>
           </label>
           <br />
 
           <label>
             Fecha de Nacimiento
-            <input type="date" name="birthDate" value={this.state.birthDate} onChange={this.handleInputChange}/>
+            <input type="date" name="birthDate" value={this.state.birth_date} onChange={this.handleInputChange}/>
           </label>
           <br />
 
           <label>
             Última vez visto
-            <input type="date" name="lastSeen" value={this.state.lastSeen} onChange={this.handleInputChange}/>
+            <input type="date" name="lastSeen" value={this.state.last_seen} onChange={this.handleInputChange}/>
           </label>
           <br />
 

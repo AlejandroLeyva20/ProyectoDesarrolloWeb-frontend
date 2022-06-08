@@ -9,7 +9,7 @@ export default class FindedPeople extends React.Component{
       curp : "",
       first_name : "",
       last_name : "",
-      birth_Date : "",
+      birth_date : "",
       found_date : "",
       address : "",
       hospitalized : false,
@@ -50,27 +50,27 @@ export default class FindedPeople extends React.Component{
           <br />
           <label>
             Nombre(s)
-            <input type="text" name="name" value={this.state.name} onChange={this.handleInputChange}/>
+            <input type="text" name="name" value={this.state.first_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Apellido(s)
-            <input type="text" name="surname" value={this.state.surname} onChange={this.handleInputChange}/>
+            <input type="text" name="surname" value={this.state.last_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Fecha de Nacimiento
-            <input type="date" name="birhDate" value={this.state.birthDate} onChange={this.handleInputChange}/>
+            <input type="date" name="birhDate" value={this.state.birth_date} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Día que se encontró
-            <input type="date" name="foundDate" value={this.state.foundDate} onChange={this.handleInputChange}/>
+            <input type="date" name="foundDate" value={this.state.found_date} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Lugar donde se encontró
-            <input type="text" name="addressFound" value={this.state.addressFounded} onChange={this.handleInputChange}/>
+            <input type="text" name="addressFound" value={this.state.address} onChange={this.handleInputChange}/>
           </label>
           <br />
             <label>
@@ -85,7 +85,7 @@ export default class FindedPeople extends React.Component{
           <br />
           <label>
             Más información
-            <input type="text" name="moreInfo" value={this.state.moreInfo} onChange={this.handleInputChange}/>
+            <input type="text" name="moreInfo" value={this.state.more_info} onChange={this.handleInputChange}/>
           </label>
           <br />
           <input type="submit" value="Enviar" />
