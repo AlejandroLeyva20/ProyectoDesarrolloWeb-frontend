@@ -1,41 +1,73 @@
 import './../App.css';
 import React from 'react';
+import {createLostPerson} from '../services/LostPersonService'
 
-function LostPerson() {
-  return (
-    <div>
-      <form className="form">
-        <h3> Ingresa los datos de la persona a buscar</h3>
+export default class LostPerson extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      curp : "",
+      name : "",
+      surname : "",
+      birthDate : "",
+      lastSeen : ""
+    }
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-        <label>
-          CURP
-          <input type="text" name="curp" />
-        </label>
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
-        <br />
+    this.setState({
+      [name]: value
+    });
+  }
 
-        <label>
-          Nombre(s)
-          <input type="text" name="name" />
-        </label>
-        <br />
-        <label>
-          Apellido(s)
-          <input type="text" name="surname" />
-        </label>
-        <br />
+  handleSubmit(event) {
+    createLostPerson(this.state.value);
+    alert('Los datos han sido registrados correctamente');
+    event.preventDefault();
+  }
 
-        <label>
-          Fecha de Nacimiento
-          <input type="date" name="birhDate" />
-        </label>
-        <br />
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h3> Ingresa los datos de la persona a buscar</h3>
+          <label>
+            CURP
+            <input type="text" name="curp" value={this.state.curp} onChange={this.handleInputChange}/>
+          </label>
+          <br />
+          <label>
+            Nombre(s)
+            <input type="text" name="name" value={this.state.name} onChange={this.handleInputChange}/>
+          </label>
+          <br />
+          <label>
+            Apellido(s)
+            <input type="text" name="surname" value={this.state.surname} onChange={this.handleInputChange}/>
+          </label>
+          <br />
 
-        <input type="submit" value="Enviar" />
-      </form>
-    </div >
-  );
+          <label>
+            Fecha de Nacimiento
+            <input type="date" name="birthDate" value={this.state.birthDate} onChange={this.handleInputChange}/>
+          </label>
+          <br />
+
+          <label>
+            Última vez visto
+            <input type="date" name="lastSeen" value={this.state.lastSeen} onChange={this.handleInputChange}/>
+          </label>
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div >
+    );
+  }
 }
-
-
-export default LostPerson;

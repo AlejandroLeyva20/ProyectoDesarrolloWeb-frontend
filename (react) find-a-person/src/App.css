@@ -60,3 +60,7 @@ tr, th, td {
   height: 80px;
 }
 
+fieldset {
+  border : none;
+  padding : 0;
+}
