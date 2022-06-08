@@ -29,7 +29,7 @@ export default class LostPerson extends React.Component {
   }
 
   handleSubmit(event) {
-    createLostPerson(this.state.value);
+    createLostPerson(this.state);
     alert('Los datos han sido registrados correctamente');
     event.preventDefault();
   }
@@ -46,24 +46,24 @@ export default class LostPerson extends React.Component {
           <br />
           <label>
             Nombre(s)
-            <input type="text" name="name" value={this.state.first_name} onChange={this.handleInputChange}/>
+            <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleInputChange}/>
           </label>
           <br />
           <label>
             Apellido(s)
-            <input type="text" name="surname" value={this.state.last_name} onChange={this.handleInputChange}/>
+            <input type="text" name="last_name" value={this.state.last_name} onChange={this.handleInputChange}/>
           </label>
           <br />
 
           <label>
             Fecha de Nacimiento
-            <input type="date" name="birthDate" value={this.state.birth_date} onChange={this.handleInputChange}/>
+            <input type="date" name="birth_date" value={this.state.birth_date} onChange={this.handleInputChange}/>
           </label>
           <br />
 
           <label>
             Última vez visto
-            <input type="date" name="lastSeen" value={this.state.last_seen} onChange={this.handleInputChange}/>
+            <input type="date" name="last_seen" value={this.state.last_seen} onChange={this.handleInputChange}/>
           </label>
           <br />
 
